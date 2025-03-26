@@ -35,8 +35,14 @@ namespace BlazoredLocation.Services
         {
             if (moduleTask.IsValueCreated)
             {
-                var module = await moduleTask.Value;
-                await module.DisposeAsync();
+                try
+                {
+                    var module = await moduleTask.Value;
+                    await module.DisposeAsync();
+                }
+                catch (Exception)
+                {
+                }
             }
         }
     }

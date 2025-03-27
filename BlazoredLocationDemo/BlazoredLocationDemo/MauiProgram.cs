@@ -1,4 +1,5 @@
-﻿using BlazoredLocationDemo.Services;
+﻿using BlazoredLocation.Services;
+using BlazoredLocationDemo.Services;
 using BlazoredLocationDemo.Shared.Services;
 using Microsoft.Extensions.Logging;
 
@@ -17,7 +18,8 @@ namespace BlazoredLocationDemo
                 });
 
             // Add device-specific services used by the BlazoredLocationDemo.Shared project
-            builder.Services.AddSingleton<IFormFactor, FormFactor>();
+            builder.Services.AddScoped<IFormFactor, FormFactor>();
+            builder.Services.AddScoped<IDeviceLocation, DeviceLocation>();
 
             builder.Services.AddMauiBlazorWebView();
 

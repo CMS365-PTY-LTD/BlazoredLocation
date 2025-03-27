@@ -21,15 +21,34 @@ For example:
 
 Install package in all 3 projects.
 
+Add a new interface method in IFormFactor located at BlazoredLocationDemo.Shared.Services
+```
+public Task<Geolocation> GetGeolocation();
+```
+
 ## Dependency Injection for BlazoredLocationDemo.Web
 ```pwsh
+builder.Services.AddScoped<IFormFactor, FormFactor>(); //Chane to AddScoped form AddSingleton
 builder.Services.AddScoped<IBrowserLocation, BrowserLocation>();
 ```
-Inject in the component where you want to access location, for example 
 
-@inject IBrowserLocation BrowserLocation
+Implement GetGeolocation in FormFactor located at BlazoredLocationDemo.Web.Services
+```
+private readonly IBrowserLocation browserLocation;
+public FormFactor(IBrowserLocation browserLocation)
+{
+    this.browserLocation = browserLocation;
+}
+public async Task<Geolocation> GetGeolocation()
+{
+    Geolocation geolocation = await browserLocation.GetGeolocation();
+    return geolocation;
+}
+```
+In the Home.razor or any component where you want to access location, for example 
+@inject IFormFactor FormFactor //If it is not already there
 
-Create OnAfterRenderAsync If it does not exist and call GetBrowserLocation()
+Create OnAfterRenderAsync If it does not exist and call GetGeolocation()
 
 ```
 protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -37,7 +56,7 @@ protected override async Task OnAfterRenderAsync(bool firstRender)
         await base.OnAfterRenderAsync(firstRender);
         if (firstRender)
         {
-            BlazoredLocation.Entities.Geolocation geolocation = await BrowserLocation.GetBrowserLocation();
+            BlazoredLocation.Entities.Geolocation geolocation = await FormFactor.GetBrowserLocation();
         }
     }
 ```
@@ -45,6 +64,45 @@ Run the web project and when the home component loads, user will be shown a conf
 
 For example: 
 
-![alt text](https://github.com/CMS365-PTY-LTD/BlazoredLocation/blob/main/BlazoredLocation/Screenshots/user-confirmation.png?raw=true)
+![alt text](https://github.com/CMS365-PTY-LTD/BlazoredLocation/blob/main/BlazoredLocation/Screenshots/web-user-confirmation.png?raw=true)
 
-geolocation variable is now has the current location or error If any.
+geolocation variable in the OnAfterRenderAsync now has the current location or error If any.
+## Dependency Injection for BlazoredLocationDemo
+```pwsh
+builder.Services.AddScoped<IFormFactor, FormFactor>();
+builder.Services.AddScoped<IDeviceLocation, DeviceLocation>();
+```
+Implement GetGeolocation in FormFactor located at BlazoredLocationDemo.Services
+```
+private readonly IDeviceLocation deviceLocation;
+public FormFactor(IDeviceLocation deviceLocation)
+{
+    this.deviceLocation = deviceLocation;
+}
+public async Task<BlazoredLocation.Entities.Geolocation> GetGeolocation()
+{
+    BlazoredLocation.Entities.Geolocation geolocation = await deviceLocation.GetDeviceLocation(true);
+    return geolocation;
+}
+```
+### Running in Windows Machine
+
+Select Windows Machine and run the project.
+
+geolocation variable in the OnAfterRenderAsync now has the current location or error If any.
+
+You can control location settings in "Location privacy settings" in widows
+
+### Running in Android Emulator
+
+Open AndroidManifest.xml located in BlazoredLocationDemo -> Platforms -> Android -> Resources and assign following permissions
+
+![alt text](https://github.com/CMS365-PTY-LTD/BlazoredLocation/blob/main/BlazoredLocation/Screenshots/android-manifest-permissions.png?raw=true)
+
+Select Android Emulator and run the project, you will see a popup and allow permissions
+
+![alt text](https://github.com/CMS365-PTY-LTD/BlazoredLocation/blob/main/BlazoredLocation/Screenshots/android-user-confirmation.png?raw=true)
+
+geolocation variable in the OnAfterRenderAsync now has the current location or error If any.
+
+You can control location settings in Settings in Android device.

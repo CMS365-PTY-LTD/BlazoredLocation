@@ -2,7 +2,6 @@
 @using BlazoredLocation.Services
 @using BlazoredLocationDemo.Shared.Services
 @inject IFormFactor FormFactor
-@inject IBrowserLocation BrowserLocation
 
 <PageTitle>Home</PageTitle>
 
@@ -22,8 +21,7 @@ Welcome to your new app running on <em>@factor</em> using <em>@platform</em>.
         {
             try
             {
-                BlazoredLocation.Entities.Geolocation geolocation = await BrowserLocation.GetBrowserLocation();
-                stirng 
+                BlazoredLocation.Entities.Geolocation geolocation = await FormFactor.GetGeolocation();
             }
             catch(Exception ex)
             {

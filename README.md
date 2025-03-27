@@ -2,6 +2,7 @@
 [![NuGet version](https://img.shields.io/nuget/v/CMS365.BlazoredLocation.svg?maxAge=3600)](https://www.nuget.org/packages/CMS365.BlazoredLocation/)
 ![GitHub last commit (main)](https://img.shields.io/github/last-commit/CMS365-PTY-LTD/BlazoredLocation/main.svg?logo=github)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
+
 The BlazoredLocation package simplifies geolocation in MAUI apps, enabling easy access to user coordinates (latitude/longitude) with minimal code. It wraps the Geolocation API for seamless async integration.
 # Installation
 
@@ -45,6 +46,7 @@ public async Task<Geolocation> GetGeolocation()
 }
 ```
 In the Home.razor or any component where you want to access location, for example 
+
 @inject IFormFactor FormFactor //If it is not already there
 
 Create OnAfterRenderAsync If it does not exist and call GetGeolocation()
@@ -124,4 +126,4 @@ Select IOS Simulator and run the project, you will see a popup and allow permiss
 
 ![alt text](https://github.com/CMS365-PTY-LTD/BlazoredLocation/blob/main/BlazoredLocation/Screenshots/ios-user-confirmation.png?raw=true)
 
-**geolocation is being returned as null, possibly due to Simulator and I don't have physical device to test it. Please test and let me know.**
+**geolocation is being returned as null, possibly due to Simulator I am using and I don't have physical device to test it. Please test and let me know.**

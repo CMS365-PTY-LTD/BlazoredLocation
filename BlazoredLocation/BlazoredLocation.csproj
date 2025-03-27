@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
@@ -9,7 +9,7 @@
     <Version>9.0.0-beta</Version>
     <Authors>Shafaqat Ali</Authors>
     <Company>CMS365 PTY LTD</Company>
-    <Description>A lightweight, easy-to-use library for geolocation services in Blazor apps.</Description>
+    <Description>A lightweight, easy-to-use library for geolocation services in Blazor/MAUI apps.</Description>
     <PackageProjectUrl>https://github.com/CMS365-PTY-LTD/BlazoredLocation</PackageProjectUrl>
     <PackageIcon>blazor-location-helper.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -58,6 +58,10 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Screenshots\" />
   </ItemGroup>
 
 </Project>

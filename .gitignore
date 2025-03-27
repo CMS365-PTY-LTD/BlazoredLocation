@@ -6,3 +6,10 @@
 /BlazoredLocation/bin/Debug/net9.0
 /BlazoredLocation/obj
 /BlazoredLocation/bin/Release
+/BlazoredLocationDemo/BlazoredLocationDemo/bin/Release
+/BlazoredLocationDemo/BlazoredLocationDemo/obj
+*.user
+/BlazoredLocationDemo/BlazoredLocationDemo.Shared/bin/Release/net9.0
+/BlazoredLocationDemo/BlazoredLocationDemo.Shared/obj
+/BlazoredLocationDemo/BlazoredLocationDemo.Web/bin/Release/net9.0
+/BlazoredLocationDemo/BlazoredLocationDemo.Web/obj

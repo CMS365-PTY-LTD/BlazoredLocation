@@ -5,6 +5,14 @@ VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazoredLocation", "BlazoredLocation\BlazoredLocation.csproj", "{F9E1A9EB-E3B1-4D16-8786-F1231B76EE00}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazoredLocationDemo", "BlazoredLocationDemo", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazoredLocationDemo", "BlazoredLocationDemo\BlazoredLocationDemo\BlazoredLocationDemo.csproj", "{DB39E350-F6DA-4DAF-8EBE-E53C436A2E8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazoredLocationDemo.Shared", "BlazoredLocationDemo\BlazoredLocationDemo.Shared\BlazoredLocationDemo.Shared.csproj", "{C6707ADA-D15B-4E03-ABCD-FBBC78A6B277}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazoredLocationDemo.Web", "BlazoredLocationDemo\BlazoredLocationDemo.Web\BlazoredLocationDemo.Web.csproj", "{6B249FF1-FFF7-41BD-8719-CA7A9E6453EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +23,26 @@ Global
 		{F9E1A9EB-E3B1-4D16-8786-F1231B76EE00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9E1A9EB-E3B1-4D16-8786-F1231B76EE00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9E1A9EB-E3B1-4D16-8786-F1231B76EE00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB39E350-F6DA-4DAF-8EBE-E53C436A2E8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB39E350-F6DA-4DAF-8EBE-E53C436A2E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB39E350-F6DA-4DAF-8EBE-E53C436A2E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB39E350-F6DA-4DAF-8EBE-E53C436A2E8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6707ADA-D15B-4E03-ABCD-FBBC78A6B277}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6707ADA-D15B-4E03-ABCD-FBBC78A6B277}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6707ADA-D15B-4E03-ABCD-FBBC78A6B277}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6707ADA-D15B-4E03-ABCD-FBBC78A6B277}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B249FF1-FFF7-41BD-8719-CA7A9E6453EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B249FF1-FFF7-41BD-8719-CA7A9E6453EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B249FF1-FFF7-41BD-8719-CA7A9E6453EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B249FF1-FFF7-41BD-8719-CA7A9E6453EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DB39E350-F6DA-4DAF-8EBE-E53C436A2E8E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C6707ADA-D15B-4E03-ABCD-FBBC78A6B277} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{6B249FF1-FFF7-41BD-8719-CA7A9E6453EB} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D43F2B16-134C-4B61-9AB6-8A6E0B20A9EE}

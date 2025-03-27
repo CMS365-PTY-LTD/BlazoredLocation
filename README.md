@@ -98,6 +98,8 @@ Open AndroidManifest.xml located in BlazoredLocationDemo -> Platforms -> Android
 
 ![alt text](https://github.com/CMS365-PTY-LTD/BlazoredLocation/blob/main/BlazoredLocation/Screenshots/android-manifest-permissions.png?raw=true)
 
+Up-to-date information is here https://learn.microsoft.com/en-us/dotnet/maui/platform-integration/device/geolocation?view=net-maui-9.0&tabs=android
+
 Select Android Emulator and run the project, you will see a popup and allow permissions
 
 ![alt text](https://github.com/CMS365-PTY-LTD/BlazoredLocation/blob/main/BlazoredLocation/Screenshots/android-user-confirmation.png?raw=true)
@@ -105,3 +107,21 @@ Select Android Emulator and run the project, you will see a popup and allow perm
 geolocation variable in the OnAfterRenderAsync now has the current location or error If any.
 
 You can control location settings in Settings in Android device.
+
+### Running in IOS Emulator
+
+Open Info.plist in IOS folder located in BlazoredLocationDemo -> Platforms and assign the following permissions
+
+![alt text](https://github.com/CMS365-PTY-LTD/BlazoredLocation/blob/main/BlazoredLocation/Screenshots/ios-manifest-permissions.png?raw=true)
+
+Open Info.plist in MacCatalyst folder located in BlazoredLocationDemo -> Platforms and assign the following permissions
+
+![alt text](https://github.com/CMS365-PTY-LTD/BlazoredLocation/blob/main/BlazoredLocation/Screenshots/mac-manifest-permissions.png?raw=true)
+
+Up-to-date information https://learn.microsoft.com/en-us/dotnet/maui/platform-integration/device/geolocation?view=net-maui-9.0&tabs=macios
+
+Select IOS Simulator and run the project, you will see a popup and allow permissions
+
+![alt text](https://github.com/CMS365-PTY-LTD/BlazoredLocation/blob/main/BlazoredLocation/Screenshots/ios-user-confirmation.png?raw=true)
+
+**geolocation is being returned as null, possibly due to Simulator and I don't have physical device to test it. Please test and let me know.**

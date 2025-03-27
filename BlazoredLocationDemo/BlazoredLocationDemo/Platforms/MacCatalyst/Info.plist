@@ -19,6 +19,8 @@
     <array>
         <string>arm64</string>
     </array>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Please allow access to location.</string>
     <key>UISupportedInterfaceOrientations</key>
     <array>
         <string>UIInterfaceOrientationPortrait</string>

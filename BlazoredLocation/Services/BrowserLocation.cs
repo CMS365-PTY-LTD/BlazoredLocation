@@ -12,7 +12,7 @@ namespace BlazoredLocation.Services
         public BrowserLocation(IJSRuntime jsRuntime)
         {
             moduleTask = new(() => jsRuntime.InvokeAsync<IJSObjectReference>(
-            "import", "./_content/BlazoredLocation/scripts/BrowserLocation.js").AsTask());
+            "import", "./_content/CMS365.BlazoredLocation/scripts/BrowserLocation.js").AsTask());
         }
 
         public async Task<Geolocation> GetBrowserLocation()

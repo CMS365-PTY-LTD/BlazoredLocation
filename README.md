@@ -14,5 +14,37 @@ Install-Package CMS365.BlazoredLocation
 ```
 # Setup
 When you create a project with Blazor hybrid and web app template, you get 3 projects created.
-For example
-For example: ![alt text](https://github.com/CMS365-PTY-LTD/BlazoredLocation/blob/main/BlazoredLocation/Screenshots/project-structure.png?raw=true)
+
+For example: 
+
+![alt text](https://github.com/CMS365-PTY-LTD/BlazoredLocation/blob/main/BlazoredLocation/Screenshots/project-structure.png?raw=true)
+
+Install package in all 3 projects.
+
+## Dependency Injection for BlazoredLocationDemo.Web
+```pwsh
+builder.Services.AddScoped<IBrowserLocation, BrowserLocation>();
+```
+Inject in the component where you want to access location, for example 
+
+@inject IBrowserLocation BrowserLocation
+
+Create OnAfterRenderAsync If it does not exist and call GetBrowserLocation()
+
+```
+protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await base.OnAfterRenderAsync(firstRender);
+        if (firstRender)
+        {
+            BlazoredLocation.Entities.Geolocation geolocation = await BrowserLocation.GetBrowserLocation();
+        }
+    }
+```
+Run the web project and when the home component loads, user will be shown a confirmation popup for location sharing.
+
+For example: 
+
+![alt text](https://github.com/CMS365-PTY-LTD/BlazoredLocation/blob/main/BlazoredLocation/Screenshots/user-confirmation.png?raw=true)
+
+geolocation variable is now has the current location or error If any.

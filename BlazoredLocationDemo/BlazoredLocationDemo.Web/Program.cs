@@ -1,3 +1,4 @@
+using BlazoredLocation.Services;
 using BlazoredLocationDemo.Shared.Services;
 using BlazoredLocationDemo.Web.Components;
 using BlazoredLocationDemo.Web.Services;
@@ -16,6 +17,7 @@ namespace BlazoredLocationDemo
 
             // Add device-specific services used by the BlazoredLocationDemo.Shared project
             builder.Services.AddSingleton<IFormFactor, FormFactor>();
+            builder.Services.AddScoped<IBrowserLocation, BrowserLocation>();
 
             var app = builder.Build();
 

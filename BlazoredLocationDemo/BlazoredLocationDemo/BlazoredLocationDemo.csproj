@@ -67,6 +67,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\BlazoredLocation\BlazoredLocation.csproj" />
     <ProjectReference Include="..\BlazoredLocationDemo.Shared\BlazoredLocationDemo.Shared.csproj" />
   </ItemGroup>
 

@@ -27,7 +27,14 @@ namespace BlazoredLocation.Services
             }
             catch (Exception ex)
             {
-                geolocation = JsonSerializer.Deserialize<Geolocation>(ex.Message);
+                try
+                {
+                    geolocation = JsonSerializer.Deserialize<Geolocation>(ex.Message);
+                }
+                catch (Exception)
+                {
+                    geolocation = new() { Message = ex.Message, Code = LocationErrorsEnum.UNKNOWN_ERROR };
+                }
             }
             return geolocation;
         }

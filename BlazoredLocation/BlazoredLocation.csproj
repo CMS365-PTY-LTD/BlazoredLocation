@@ -6,7 +6,7 @@
     <ApplicationIcon>blazor-location-helper.ico</ApplicationIcon>
     <PackageId>CMS365.BlazoredLocation</PackageId>
     <Title>BlazoredLocation</Title>
-    <Version>9.0.1</Version>
+    <Version>9.0.2</Version>
     <Authors>Shafaqat Ali</Authors>
     <Company>CMS365 PTY LTD</Company>
     <Description>A lightweight, easy-to-use library for geolocation services in Blazor/MAUI apps.</Description>

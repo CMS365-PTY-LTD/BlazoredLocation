@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlazoredLocation.Services
 {
-    public class BrowserLocation : IBrowserLocation, IAsyncDisposable
+    public class BrowserLocation : IBrowserLocation
     {
         private readonly Lazy<Task<IJSObjectReference>> moduleTask;
         public BrowserLocation(IJSRuntime jsRuntime)
@@ -37,20 +37,6 @@ namespace BlazoredLocation.Services
                 }
             }
             return geolocation;
-        }
-        public async ValueTask DisposeAsync()
-        {
-            if (moduleTask.IsValueCreated)
-            {
-                try
-                {
-                    var module = await moduleTask.Value;
-                    await module.DisposeAsync();
-                }
-                catch (Exception)
-                {
-                }
-            }
         }
     }
 }

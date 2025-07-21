@@ -10,8 +10,8 @@ jobs:
     name: "Build"
     runs-on: windows-latest
     environment: DEV
-    # env:
-    #   SLN_FILE: "/home/runner/work/EbaySharp/EbaySharp/EbaySharp.sln"
+    env:
+      PROJECT_FILE: "BlazoredLocation/BlazoredLocation/BlazoredLocation/BlazoredLocation.csproj"
     
     
     steps:
@@ -25,4 +25,4 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore --configuration Release
+      run: dotnet build PROJECT_FILE --no-restore --configuration Release

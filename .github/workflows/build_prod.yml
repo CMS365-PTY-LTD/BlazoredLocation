@@ -8,8 +8,8 @@ jobs:
     name: "Build Test"
     runs-on: windows-latest
     environment: PROD
-    # env:
-    #   SLN_FILE: "/home/runner/work/EbaySharp/EbaySharp/EbaySharp.sln"
+    env:
+      SLN_FILE: "BlazoredLocation\BlazoredLocation\BlazoredLocation\BlazoredLocation.csproj"
     
     
     steps:

@@ -1,17 +1,13 @@
 name: Build PROD
-
 on:
   workflow_dispatch:
-
 jobs:
   build:
-    name: "Build Test"
+    name: "Build"
     runs-on: windows-latest
     environment: PROD
     env:
-      SLN_FILE: "BlazoredLocation\BlazoredLocation\BlazoredLocation\BlazoredLocation.csproj"
-    
-    
+      PROJECT_FILE: "BlazoredLocation/BlazoredLocation/BlazoredLocation/BlazoredLocation.csproj"
     steps:
     - uses: actions/checkout@v4
     - name: Setup .NET
@@ -23,4 +19,4 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build PROJECT_FILE --no-restore --configuration Release

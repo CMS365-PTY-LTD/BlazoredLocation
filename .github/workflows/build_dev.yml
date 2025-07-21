@@ -9,7 +9,7 @@ jobs:
     runs-on: windows-latest
     environment: DEV
     env:
-      PROJECT_FILE: "BlazoredLocation\\BlazoredLocation\\BlazoredLocation\\BlazoredLocation.csproj"
+      PROJECT_FILE: "BlazoredLocation/BlazoredLocation/BlazoredLocation/BlazoredLocation.csproj"
     steps:
     - uses: actions/checkout@v4
     - name: Setup .NET

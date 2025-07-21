@@ -12,6 +12,15 @@ jobs:
       PROJECT_FILE: "./BlazoredLocation/BlazoredLocation/BlazoredLocation/BlazoredLocation.csproj"
     steps:
     - uses: actions/checkout@v4
+    - name: Print all environment variables
+      run: |
+        echo "=== ALL ENVIRONMENT VARIABLES ==="
+        if ($IsWindows) {
+          Get-ChildItem env: | Format-Table
+        } else {
+          printenv | sort
+        }
+      shell: pwsh  # Uses PowerShell Core (works on Windows/Linux/macOS)
     - name: List ALL files
       run: |
         Write-Output "Full repository structure:"

@@ -1,0 +1,26 @@
+name: Build PROD
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: "Build Test"
+    runs-on: windows-latest
+    environment: PROD
+    # env:
+    #   SLN_FILE: "/home/runner/work/EbaySharp/EbaySharp/EbaySharp.sln"
+    
+    
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.0.x
+    # - name: Verify solution Path
+    #   run: ls -la $SLN_FILE
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore

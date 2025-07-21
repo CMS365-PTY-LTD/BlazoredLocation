@@ -9,9 +9,11 @@ jobs:
     runs-on: windows-latest
     environment: DEV
     env:
-      PROJECT_FILE: "BlazoredLocation/BlazoredLocation/BlazoredLocation/BlazoredLocation.csproj"
+      PROJECT_FILE: "./BlazoredLocation/BlazoredLocation/BlazoredLocation/BlazoredLocation.csproj"
     steps:
     - uses: actions/checkout@v4
+    - name: List files
+      run: dir /s
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:

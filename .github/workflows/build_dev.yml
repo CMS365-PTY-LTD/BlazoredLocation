@@ -12,8 +12,10 @@ jobs:
       PROJECT_FILE: "./BlazoredLocation/BlazoredLocation/BlazoredLocation/BlazoredLocation.csproj"
     steps:
     - uses: actions/checkout@v4
-    # - name: List files
-    #   run: dir /a
+    - name: List ALL files
+      run: |
+        Write-Output "Full repository structure:"
+        Get-ChildItem -Recurse | Format-Table FullName
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:

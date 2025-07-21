@@ -54,23 +54,23 @@ namespace BlazoredLocation.Services
                     throw new Exception();
                 }
             }
-            catch (FeatureNotSupportedException fnsEx)
+            catch (FeatureNotSupportedException)
             {
                 geolocation = new() { Message = "Location information is unavailable.", Code = LocationErrorsEnum.POSITION_UNAVAILABLE };
             }
-            catch (FeatureNotEnabledException fneEx)
+            catch (FeatureNotEnabledException)
             {
                 geolocation = new() { Message = "Location information is unavailable.", Code = LocationErrorsEnum.POSITION_UNAVAILABLE };
             }
-            catch (PermissionException pEx)
+            catch (PermissionException)
             {
                 geolocation = new() { Message = "User denied the request for Geolocation.", Code = LocationErrorsEnum.PERMISSION_DENIED };
             }
-            catch (UnauthorizedAccessException uae)
+            catch (UnauthorizedAccessException)
             {
                 geolocation = new() { Message = "Your App does not have permission to access location data.", Code = LocationErrorsEnum.PERMISSION_DENIED };
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 geolocation = new() { Message = "An unknown error occurred.", Code = LocationErrorsEnum.UNKNOWN_ERROR };
             }
@@ -113,23 +113,23 @@ namespace BlazoredLocation.Services
                     geolocation = await GetCurrentLocation();
                 }
             }
-            catch (FeatureNotSupportedException fnsEx)
+            catch (FeatureNotSupportedException)
             {
                 geolocation = new() { Message = "Location information is unavailable.", Code = LocationErrorsEnum.POSITION_UNAVAILABLE };
             }
-            catch (FeatureNotEnabledException fneEx)
+            catch (FeatureNotEnabledException)
             {
                 geolocation = new() { Message = "Location information is unavailable.", Code = LocationErrorsEnum.POSITION_UNAVAILABLE };
             }
-            catch (PermissionException pEx)
+            catch (PermissionException)
             {
                 geolocation = new() { Message = "User denied the request for Geolocation.", Code = LocationErrorsEnum.PERMISSION_DENIED };
             }
-            catch (UnauthorizedAccessException uae)
+            catch (UnauthorizedAccessException)
             {
                 geolocation = new() { Message = "Your App does not have permission to access location data.", Code = LocationErrorsEnum.PERMISSION_DENIED };
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 geolocation = new() { Message = "An unknown error occurred.", Code = LocationErrorsEnum.UNKNOWN_ERROR };
             }

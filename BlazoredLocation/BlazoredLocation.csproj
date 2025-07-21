@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ApplicationIcon>blazor-location-helper.ico</ApplicationIcon>
     <PackageId>CMS365.BlazoredLocation</PackageId>
     <Title>BlazoredLocation</Title>

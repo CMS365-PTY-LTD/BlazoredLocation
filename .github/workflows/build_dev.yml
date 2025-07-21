@@ -19,6 +19,6 @@ jobs:
     # - name: Verify solution Path
     #   run: ls -la $SLN_FILE
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore $env:PROJECT_FILE
     - name: Build
-      run: dotnet build PROJECT_FILE --no-restore --configuration Release
+      run: dotnet build $env:PROJECT_FILE --no-restore --configuration Release
